@@ -1,0 +1,15 @@
+extends layout
+
+block content
+
+	h2= entry.title
+
+	p= entry.body
+
+	p
+		a(href="/update/" + encodeURIComponent(entry._id)) Edit this post
+
+	form(action=encodeURIComponent(entry._id), method="POST")
+		p
+			input(name="_method", type="hidden", value="DELETE")
+			input(type="submit", value="Delete")

@@ -1,0 +1,20 @@
+extends layout
+
+block content
+
+	h2 Update this blog entry
+
+	p= entry.title
+
+	br
+
+	form(method="POST", action=encodeURIComponent(entry._id))
+		p
+			label(for="title") Title <br />
+			input#title(name="title", placeholder=entry.title)
+		p
+			label(for="text") Text <br />
+			textarea#body(name="body", placeholder=entry.body, cols=70, rows=20)
+		p
+			input(name="_method", type="hidden", value="PUT")
+			input(type="submit", value="Edit entry")

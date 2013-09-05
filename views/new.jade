@@ -1,0 +1,17 @@
+extends layout
+
+block content
+
+	h2 Add a new blog entry
+
+	br
+
+	form(method="POST", action="/new")
+		p
+			label(for="title") Title <br />
+			input#title(name="title")
+		p
+			label(for="text") Text <br />
+			textarea#body(name="body", cols=70, rows=20)
+		p
+			input(type="submit", value="Add entry")
