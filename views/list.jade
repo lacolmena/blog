@@ -2,13 +2,15 @@ extends layout
 
 block content
 
-	h2 List of all entries
+	h1 List of all entries
 
 	p
 		- for(var entry in entries) {
-			p
+			h2
 				a(href="/entries/" + encodeURIComponent(entries[entry]._id))!= entries[entry].title
-			p!= entries[entry].body
+			p
+				a(href="/entries/" + encodeURIComponent(entries[entry]._id))!= entries[entry].body
+			hr
 		- };
 
 	p

@@ -43,13 +43,13 @@ app.get('/new', function (req, res) {
 })
 
 app.get('/entries/:id', function (req, res) {
-  Blog.findOne({_id: req.params.id}, function (err, data) {
+  Blog.findById(req.params.id, function (err, data) {
     res.render('entry', { entry: data })
   })
 })
 
 app.get('/update/:id', function (req, res) {
-  Blog.findOne({_id: req.params.id}, function (err, data) {
+  Blog.findById(req.params.id, function (err, data) {
     res.render('update', { entry: data })
   })
 })
